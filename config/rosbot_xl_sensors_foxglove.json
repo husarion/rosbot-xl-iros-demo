@@ -1,0 +1,202 @@
+{
+  "configById": {
+    "3D!1zudscd": {
+      "cameraState": {
+        "perspective": true,
+        "distance": 8.36240670437608,
+        "phi": 58.86798182662426,
+        "thetaOffset": -26.320754712194194,
+        "targetOffset": [
+          1.0426503874011923,
+          1.629957260286504,
+          -7.468567253674038e-18
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "followTf": "odom",
+      "scene": {
+        "transforms": {
+          "showLabel": false,
+          "editable": false
+        }
+      },
+      "transforms": {
+        "frame:base_link": {
+          "visible": false
+        },
+        "frame:body_link": {
+          "visible": false
+        },
+        "frame:cover_link": {
+          "visible": false
+        },
+        "frame:imu_link": {
+          "visible": false
+        },
+        "frame:fl_wheel_link": {
+          "visible": false
+        },
+        "frame:fr_wheel_link": {
+          "visible": false
+        },
+        "frame:rl_wheel_link": {
+          "visible": false
+        },
+        "frame:rr_wheel_link": {
+          "visible": false
+        },
+        "frame:slamtec_rplidar_s1_link": {
+          "visible": false
+        },
+        "frame:laser": {
+          "visible": false
+        },
+        "frame:oak": {
+          "visible": false
+        },
+        "frame:oak-d-base-frame": {
+          "visible": false
+        },
+        "frame:oak_imu_frame": {
+          "visible": false
+        },
+        "frame:oak_left_camera_frame": {
+          "visible": false
+        },
+        "frame:oak_left_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:oak_model_origin": {
+          "visible": false
+        },
+        "frame:oak_rgb_camera_frame": {
+          "visible": false
+        },
+        "frame:oak_rgb_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:oak_right_camera_frame": {
+          "visible": false
+        },
+        "frame:oak_right_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:os_lidar": {
+          "visible": false
+        },
+        "frame:os_imu": {
+          "visible": false
+        },
+        "frame:odom": {
+          "visible": false
+        },
+        "frame:front_light_link": {
+          "visible": false
+        },
+        "frame:rear_light_link": {
+          "visible": false
+        }
+      },
+      "topics": {
+        "/ouster/scan": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/ouster/points": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "rainbow"
+        },
+        "/oak/rgb/image_raw": {
+          "visible": false
+        },
+        "/panther/lights/driver/front_panel_frame": {
+          "visible": false
+        }
+      },
+      "layers": {
+        "b1115faf-0465-4daa-9b14-902aa3c8f7ad": {
+          "visible": true,
+          "frameLocked": true,
+          "label": "URDF",
+          "instanceId": "b1115faf-0465-4daa-9b14-902aa3c8f7ad",
+          "layerId": "foxglove.Urdf",
+          "url": "http://10.15.20.3:8080/panther.urdf",
+          "order": 1
+        }
+      },
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      }
+    },
+    "ImageViewPanel!38o2hu0": {
+      "cameraTopic": "/oak/rgb/image_raw/compressed",
+      "enabledMarkerTopics": [],
+      "mode": "fit",
+      "pan": {
+        "x": 0,
+        "y": 0
+      },
+      "rotation": 180,
+      "synchronize": false,
+      "transformMarkers": false,
+      "zoom": 1
+    },
+    "Plot!1g3xy7v": {
+      "paths": [
+        {
+          "value": "/panther/battery.percentage",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "foxglovePanelTitle": "Plot"
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "first": "3D!1zudscd",
+    "second": {
+      "first": "ImageViewPanel!38o2hu0",
+      "second": "Plot!1g3xy7v",
+      "direction": "column"
+    },
+    "direction": "row",
+    "splitPercentage": 57.891920813269124
+  }
+}
