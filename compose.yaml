@@ -32,16 +32,6 @@ services:
       - /dev/ttyRPLIDAR:/dev/ttyUSB0
     command: ros2 launch sllidar_ros2 sllidar_launch.py serial_baudrate:=${LIDAR_BAUDRATE:-115200}
 
-  navigation:
-    image: husarion/navigation2:humble-1.1.8-20230809
-    <<: *net-config
-    volumes:
-      - ./config/nav2_params_mppi.yaml:/params.yaml
-    command: >
-      ros2 launch nav2_bringup navigation_launch.py
-        params_file:=/params.yaml
-        use_sim_time:=False;
-
   slam:
     image: husarion/navigation2:humble-1.1.8-20230809
     <<: *net-config
@@ -58,6 +48,24 @@ services:
         map:=/maps/map.yaml
         use_sim_time:=False
   
+  navigation:
+    image: husarion/navigation2:humble-1.1.8-20230809
+    <<: *net-config
+    depends_on:
+      slam: { condition: service_healthy }
+    volumes:
+      - ./config/nav2_params_mppi.yaml:/nav2_params.yaml
+    environment:
+      - SLAM_MODE=${SLAM_MODE:-slam}
+    command: >
+      bash -c "
+        if [[ \"\$SLAM_MODE\" == \"localization\" ]]; then 
+          ros2 launch nav2_bringup navigation_launch.py 
+          params_file:=/nav2_params.yaml 
+          use_sim_time:=True; 
+        fi
+      "
+
   rosbridge:
     image: husarion/rosbridge-server:humble-1.3.1-20230831
     <<: *net-config
@@ -66,7 +74,8 @@ services:
     command: ros2 launch rosbridge_server rosbridge_websocket_launch.xml use_compression:=true
 
   foxglove:
-    image: husarion/foxglove:humble-1.39.1-20230220
+  # TODO add-panther, because I needed newer foxglove image with updated rviz dependency
+    image: husarion/foxglove:humble-add-panther
     volumes:
       - ./config/foxglove.json:/src/FoxgloveDefaultLayout.json
       - ./config/rosbot_xl_manipulation.urdf:/src/rosbot_xl_manipulation.urdf
