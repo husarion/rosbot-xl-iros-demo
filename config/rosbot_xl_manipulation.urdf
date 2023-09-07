@@ -199,7 +199,7 @@
     </joint>
   </ros2_control>
   <joint name="body_to_antenna_connector_joint" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="-0.155 -0.055 0.065"/>
+    <origin rpy="-1.57 0.0 0.0" xyz="-0.155 -0.055 0.065"/>
     <parent link="body_link"/>
     <child link="antenna_connector_link"/>
   </joint>
@@ -317,7 +317,7 @@
   </joint>
   <link name="link1">
     <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="-1.5707963267948966 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="http://{{.Host}}:{{env "FOXGLOVE_PORT"}}/ros2_ws/install/open_manipulator_x_description/share/open_manipulator_x_description/meshes/link1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -346,7 +346,7 @@
   </joint>
   <link name="link2">
     <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.019"/>
+      <origin rpy="-1.5707963267948966 0.0 0.0" xyz="0.0 0.0 0.019"/>
       <geometry>
         <mesh filename="http://{{.Host}}:{{env "FOXGLOVE_PORT"}}/ros2_ws/install/open_manipulator_x_description/share/open_manipulator_x_description/meshes/link2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -374,7 +374,7 @@
   </joint>
   <link name="link3">
     <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="-1.5707963267948966 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="http://{{.Host}}:{{env "FOXGLOVE_PORT"}}/ros2_ws/install/open_manipulator_x_description/share/open_manipulator_x_description/meshes/link3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -402,7 +402,7 @@
   </joint>
   <link name="link4">
     <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="-1.5707963267948966 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="http://{{.Host}}:{{env "FOXGLOVE_PORT"}}/ros2_ws/install/open_manipulator_x_description/share/open_manipulator_x_description/meshes/link4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -430,7 +430,7 @@
   </joint>
   <link name="link5">
     <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="-1.5707963267948966 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="http://{{.Host}}:{{env "FOXGLOVE_PORT"}}/ros2_ws/install/open_manipulator_x_description/share/open_manipulator_x_description/meshes/link5.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -458,7 +458,7 @@
   </joint>
   <link name="gripper_left_link">
     <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="-1.5707963267948966 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="http://{{.Host}}:{{env "FOXGLOVE_PORT"}}/ros2_ws/install/open_manipulator_x_description/share/open_manipulator_x_description/meshes/gripper_left_palm.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -487,7 +487,7 @@
   </joint>
   <link name="gripper_right_link">
     <visual>
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <origin rpy="-1.5707963267948966 0.0 0.0" xyz="0.0 0.0 0.0"/>
       <geometry>
         <mesh filename="http://{{.Host}}:{{env "FOXGLOVE_PORT"}}/ros2_ws/install/open_manipulator_x_description/share/open_manipulator_x_description/meshes/gripper_right_palm.stl" scale="0.001 0.001 0.001"/>
       </geometry>
