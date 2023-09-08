@@ -1,0 +1,255 @@
+{
+  "configById": {
+    "3D!1zudscd": {
+      "cameraState": {
+        "perspective": true,
+        "distance": 3.8742296891600274,
+        "phi": 54.5934457824006,
+        "thetaOffset": -52.54541113629062,
+        "targetOffset": [
+          0.2573499355091006,
+          0.7197477085694265,
+          -1.3804938010133955e-17
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "followTf": "map",
+      "scene": {
+        "transforms": {
+          "showLabel": false,
+          "editable": false
+        }
+      },
+      "transforms": {
+        "frame:base_link": {
+          "visible": false
+        },
+        "frame:body_link": {
+          "visible": false
+        },
+        "frame:cover_link": {
+          "visible": false
+        },
+        "frame:imu_link": {
+          "visible": false
+        },
+        "frame:fl_wheel_link": {
+          "visible": false
+        },
+        "frame:fr_wheel_link": {
+          "visible": false
+        },
+        "frame:rl_wheel_link": {
+          "visible": false
+        },
+        "frame:rr_wheel_link": {
+          "visible": false
+        },
+        "frame:slamtec_rplidar_s1_link": {
+          "visible": false
+        },
+        "frame:laser": {
+          "visible": false
+        },
+        "frame:oak": {
+          "visible": false
+        },
+        "frame:oak-d-base-frame": {
+          "visible": false
+        },
+        "frame:oak_imu_frame": {
+          "visible": false
+        },
+        "frame:oak_left_camera_frame": {
+          "visible": false
+        },
+        "frame:oak_left_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:oak_model_origin": {
+          "visible": false
+        },
+        "frame:oak_rgb_camera_frame": {
+          "visible": false
+        },
+        "frame:oak_rgb_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:oak_right_camera_frame": {
+          "visible": false
+        },
+        "frame:oak_right_camera_optical_frame": {
+          "visible": false
+        },
+        "frame:os_lidar": {
+          "visible": false
+        },
+        "frame:os_imu": {
+          "visible": false
+        },
+        "frame:odom": {
+          "visible": false
+        },
+        "frame:front_light_link": {
+          "visible": false
+        },
+        "frame:rear_light_link": {
+          "visible": false
+        },
+        "frame:map": {
+          "visible": false
+        },
+        "frame:antenna_link": {
+          "visible": false
+        },
+        "frame:antenna_connector_link": {
+          "visible": false
+        },
+        "frame:link1": {
+          "visible": false
+        },
+        "frame:end_effector_link": {
+          "visible": false
+        },
+        "frame:link5": {
+          "visible": false
+        },
+        "frame:link2": {
+          "visible": false
+        },
+        "frame:link3": {
+          "visible": false
+        },
+        "frame:link4": {
+          "visible": false
+        },
+        "frame:gripper_left_link": {
+          "visible": false
+        },
+        "frame:gripper_right_link": {
+          "visible": false
+        }
+      },
+      "topics": {
+        "/ouster/scan": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/ouster/points": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "rainbow"
+        },
+        "/oak/rgb/image_raw": {
+          "visible": false
+        },
+        "/panther/lights/driver/front_panel_frame": {
+          "visible": false
+        },
+        "/map": {
+          "visible": true
+        },
+        "/scan_filtered": {
+          "visible": true,
+          "colorField": "range",
+          "colorMode": "colormap",
+          "colorMap": "rainbow"
+        },
+        "/local_costmap/costmap": {
+          "visible": true,
+          "frameLocked": false,
+          "minColor": "#5f00bd47",
+          "maxColor": "#af000059",
+          "unknownColor": "#80808082",
+          "invalidColor": "#ff0000"
+        },
+        "/local_costmap/clearing_endpoints": {
+          "visible": false,
+          "colorField": "x",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/global_costmap/costmap": {
+          "visible": true,
+          "minColor": "#5f00bd47",
+          "maxColor": "#af000059",
+          "unknownColor": "#80808082",
+          "invalidColor": "#ff0000ff"
+        },
+        "/plan": {
+          "visible": false
+        },
+        "/local_plan": {
+          "visible": true,
+          "lineWidth": 0.02,
+          "gradient": [
+            "#6bff76",
+            "#77ff6b"
+          ],
+          "type": "line"
+        },
+        "/plan_smoothed": {
+          "visible": false
+        },
+        "/move_base_simple/goal": {
+          "visible": true
+        },
+        "/received_global_plan": {
+          "visible": true,
+          "lineWidth": 0.02,
+          "gradient": [
+            "#fd0000",
+            "#ff6b6b80"
+          ],
+          "type": "line"
+        },
+        "/transformed_global_plan": {
+          "visible": false
+        }
+      },
+      "layers": {
+        "b1115faf-0465-4daa-9b14-902aa3c8f7ad": {
+          "visible": true,
+          "frameLocked": true,
+          "label": "URDF",
+          "instanceId": "b1115faf-0465-4daa-9b14-902aa3c8f7ad",
+          "layerId": "foxglove.Urdf",
+          "url": "http://localhost:8080/rosbot_xl_manipulation.urdf",
+          "order": 1
+        }
+      },
+      "publish": {
+        "type": "pose",
+        "poseTopic": "/goal_pose",
+        "pointTopic": "/move_base_simple/goal",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      }
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": "3D!1zudscd"
+}
