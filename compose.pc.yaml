@@ -1,3 +1,6 @@
+# Usage:
+# xhost +local:docker && docker compose -f compose.pc.yaml up
+
 x-net-config:
   &net-config
   network_mode: host
@@ -12,21 +15,13 @@ x-gpu-config:
     - NVIDIA_VISIBLE_DEVICES=all
     - NVIDIA_DRIVER_CAPABILITIES=all
 
-x-cpu-config:
-  &cpu-config
-  environment:
-    - DISPLAY=${DISPLAY:?err}
-    - LIBGL_ALWAYS_SOFTWARE=1
-
 services:
-
-  # if you have NVDIA GPU and NVIDIA Container Toolkit, you can replace
-  # "cpu-config" with "gpu-config"
   rviz:
-    image: husarion/rviz2:humble-11.2.6-20230809
-    <<: [ *net-config, *cpu-config ]
+    # Launching rviz with moveit2 requires all the configs, using manipulation simulation image is easiest option
+    image: husarion/rosbot-xl-manipulation-gazebo:humble
+    <<: [ *net-config, *gpu-config ]
+    container_name: rviz
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ./config/rosbot.rviz:/root/.rviz2/default.rviz
-
-
+      - ./config/rosbot_xl_manipulation.rviz:/ros2_ws/install/rosbot_xl_manipulation_moveit/share/rosbot_xl_manipulation_moveit/config/moveit.rviz
+    command: ros2 launch rosbot_xl_manipulation_moveit rviz.launch.py
