@@ -5,7 +5,7 @@ ROSbot XL demo for IROS 2023 - manipulation combined with navigation.
 <!-- SLAM_MODE=slam docker compose up
 SLAM_MODE=localization docker compose up -->
 
-## Running on the robot
+## Real robot
 
 Clone the repository to your computer and download necessary docker images:
 ```
