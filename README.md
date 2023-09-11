@@ -11,7 +11,7 @@ Clone the repository to your computer and download necessary docker images:
 ```
 docker compose -f compose.pc.yaml pull
 ```
-Now power up the ROSbot XL and connect you computer to the `rosbotap` network, run `ssh husarion@192.168.78.1` and go into the `rosbot-xl-iros-demo` directory.
+Now power up the ROSbot XL and connect you computer to the `rosbotap` network (default password is `husarion`), run `ssh husarion@192.168.78.1` and go into the `rosbot-xl-iros-demo` directory.
 Before running the containers, check the following things:
 * gamepad should be connected to the ROSbotXL
 * make sure that antennas are tilted, so they won't collide with the manipulator.
@@ -20,6 +20,8 @@ Now you're ready to run the mapping mode:
 ```
 SLAM_MODE=slam docker compose up
 ```
+> For details about manipulator operation and turning off check out [dedicated tutorial](https://husarion.com/tutorials/ros-projects/rosbot-xl-openmanipulator-x/)
+
 After everything starts you can type in your browser:
 ```
 http://192.168.78.1:8080/
