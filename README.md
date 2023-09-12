@@ -34,12 +34,12 @@ to connect to the Foxglove.
 You will additionally have to select the data source (plus sign in the left upper part, open new connection: `ws://192.168.78.1:9090`).
 Now you should see the model and map.
 
-To control with a manipulator you, run **on your computer**:
+To control manipulator you, run **on your computer**:
 ```
 xhost +local:docker && docker compose -f compose.pc.yaml up
 ```
 
-Now you can drive around using gampad and once you are finished simply kill the containers.
+Now you can drive around using gamepad and once you are finished simply kill the containers.
 
 After creating a map you can use localization mode (which also comes with autonomous navigation). Run:
 ```
