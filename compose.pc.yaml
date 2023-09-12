@@ -23,5 +23,6 @@ services:
     container_name: rviz
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /dev/dri/card0:/dev/dri/card0
       - ./config/rosbot_xl_manipulation.rviz:/ros2_ws/install/rosbot_xl_manipulation_moveit/share/rosbot_xl_manipulation_moveit/config/moveit.rviz
     command: ros2 launch rosbot_xl_manipulation_moveit rviz.launch.py

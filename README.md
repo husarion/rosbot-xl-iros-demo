@@ -7,15 +7,17 @@ SLAM_MODE=localization docker compose up -->
 
 ## Real robot
 
-Clone the repository to your computer and download necessary docker images:
+Clone the repository to your computer and download necessary docker images (**You WILL loose internet access in the next step so actually do this**):
 ```
+git clone "https://github.com/husarion/rosbot-xl-iros-demo.git"
+cd rosbot-xl-iros-demo
 docker compose -f compose.pc.yaml pull
 ```
 Now power up the ROSbot XL and connect you computer to the `rosbotap` network (default password is `husarion`), run `ssh husarion@192.168.78.1` and go into the `rosbot-xl-iros-demo` directory.
 Before running the containers, check the following things:
 * gamepad should be connected to the ROSbotXL
 * make sure that antennas are tilted, so they won't collide with the manipulator.
-* take the manipulator out of the dock and hold it in the starting position.
+* **take the manipulator out of the dock and hold it in the starting position**.
 Now you're ready to run the mapping mode:
 ```
 SLAM_MODE=slam docker compose up
@@ -26,16 +28,18 @@ After everything starts you can type in your browser:
 ```
 http://192.168.78.1:8080/
 ```
+or click [here](http://192.168.78.1:8080/?ds=rosbridge-websocket&ds.url=ws%3A%2F%2F192.168.78.1%3A9090).
+
 to connect to the Foxglove.
 You will additionally have to select the data source (plus sign in the left upper part, open new connection: `ws://192.168.78.1:9090`).
 Now you should see the model and map.
 
-To control manipulator you will have to run:
+To control with a manipulator you, run **on your computer**:
 ```
-docker compose -f compose.pc.yaml up
+xhost +local:docker && docker compose -f compose.pc.yaml up
 ```
 
-Now you can drive around using gamped, after you are finished simply kill the containers.
+Now you can drive around using gampad and once you are finished simply kill the containers.
 
 After creating a map you can use localization mode (which also comes with autonomous navigation). Run:
 ```
