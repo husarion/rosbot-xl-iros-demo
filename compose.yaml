@@ -10,7 +10,7 @@ services:
     <<: *net-config
     devices:
       - ${MANIPULATOR_SERIAL:?err}:/dev/manipulator
-    volumes: 
+    volumes:
       - ./config/joy_servo.yaml:/joy_servo.yaml
       - ./config/diff_drive_controller_manipulation.yaml:/ros2_ws/install/rosbot_xl_manipulation_controller/share/rosbot_xl_manipulation_controller/config/diff_drive_controller_manipulation.yaml
     command: >
@@ -48,7 +48,7 @@ services:
         params_file:=/params.yaml
         map:=/maps/map.yaml
         use_sim_time:=False
-  
+
   navigation:
     image: husarion/navigation2:humble-1.1.8-20230809
     <<: *net-config
@@ -60,10 +60,10 @@ services:
       - SLAM_MODE=${SLAM_MODE:-slam}
     command: >
       bash -c "
-        if [[ \"\$SLAM_MODE\" == \"localization\" ]]; then 
-          ros2 launch nav2_bringup navigation_launch.py 
-          params_file:=/nav2_params.yaml 
-          use_sim_time:=True; 
+        if [[ \"\$SLAM_MODE\" == \"localization\" ]]; then
+          ros2 launch nav2_bringup navigation_launch.py
+          params_file:=/nav2_params.yaml
+          use_sim_time:=True;
         fi
       "
 
@@ -91,8 +91,8 @@ services:
     <<: *net-config
     devices:
       - /dev/input
-    volumes: 
+    volumes:
       - ./config/joy2twist.yaml:/joy2twist.yaml
-    command: > 
+    command: >
       ros2 launch joy2twist gamepad_controller.launch.py
         joy2twist_params_file:=/joy2twist.yaml

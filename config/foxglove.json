@@ -3,13 +3,13 @@
     "3D!1zudscd": {
       "cameraState": {
         "perspective": true,
-        "distance": 21.05263157888481,
-        "phi": 47.74059118686764,
-        "thetaOffset": -52.00439123080514,
+        "distance": 5.270401889298959,
+        "phi": 47.74059118686729,
+        "thetaOffset": -52.00439123080538,
         "targetOffset": [
-          0.8367523837644667,
-          -0.8368078718184575,
-          -1.1144242170949178e-16
+          0.9134152897190125,
+          -0.7664556383177752,
+          -9.624932994671493e-17
         ],
         "target": [
           0,
@@ -195,7 +195,12 @@
           "invalidColor": "#ff0000ff"
         },
         "/plan": {
-          "visible": false
+          "visible": true,
+          "gradient": [
+            "#60f8528c",
+            "#33ef25ff"
+          ],
+          "lineWidth": 0.04
         },
         "/local_plan": {
           "visible": true,
@@ -213,7 +218,7 @@
           "visible": true
         },
         "/received_global_plan": {
-          "visible": true,
+          "visible": false,
           "lineWidth": 0.02,
           "gradient": [
             "#fd0000",
@@ -223,17 +228,41 @@
         },
         "/transformed_global_plan": {
           "visible": false
+        },
+        "/robot_description": {
+          "visible": true,
+          "displayMode": "auto"
+        },
+        "/goal_pose": {
+          "visible": true,
+          "type": "arrow",
+          "color": "#23f82eff",
+          "arrowScale": [
+            0.6,
+            0.1,
+            0.1
+          ]
+        },
+        "/pose": {
+          "visible": false
         }
       },
       "layers": {
-        "b1115faf-0465-4daa-9b14-902aa3c8f7ad": {
+        "dabd0380-9d1e-4e84-8ce3-9e967823a77f": {
           "visible": true,
           "frameLocked": true,
           "label": "URDF",
-          "instanceId": "b1115faf-0465-4daa-9b14-902aa3c8f7ad",
+          "instanceId": "dabd0380-9d1e-4e84-8ce3-9e967823a77f",
           "layerId": "foxglove.Urdf",
-          "url": "http://192.168.78.1:8080/rosbot_xl_manipulation.urdf",
-          "order": 1
+          "sourceType": "url",
+          "url": "http://localhost:8080/rosbot_xl.urdf",
+          "filePath": "",
+          "parameter": "",
+          "topic": "",
+          "framePrefix": "",
+          "displayMode": "auto",
+          "fallbackColor": "#ffffff",
+          "order": 2
         }
       },
       "publish": {
@@ -244,7 +273,8 @@
         "poseEstimateXDeviation": 0.5,
         "poseEstimateYDeviation": 0.5,
         "poseEstimateThetaDeviation": 0.26179939
-      }
+      },
+      "imageMode": {}
     }
   },
   "globalVariables": {},
