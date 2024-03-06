@@ -3,13 +3,13 @@
     "3D!1zudscd": {
       "cameraState": {
         "perspective": true,
-        "distance": 21.05263157888481,
-        "phi": 47.74059118686764,
-        "thetaOffset": -52.00439123080514,
+        "distance": 5.006881794831565,
+        "phi": 62.42590587217946,
+        "thetaOffset": -55.36103458745074,
         "targetOffset": [
-          0.8367523837644667,
-          -0.8368078718184575,
-          -1.1144242170949178e-16
+          -1.2700059681065339,
+          0.12601745085729144,
+          -1.346499912963013e-16
         ],
         "target": [
           0,
@@ -232,7 +232,7 @@
           "label": "URDF",
           "instanceId": "b1115faf-0465-4daa-9b14-902aa3c8f7ad",
           "layerId": "foxglove.Urdf",
-          "url": "http://192.168.78.1:8080/rosbot_xl_manipulation.urdf",
+          "url": "http://10.42.0.1:8080/rosbot_xl_manipulation.urdf",
           "order": 1
         }
       },
@@ -244,7 +244,8 @@
         "poseEstimateXDeviation": 0.5,
         "poseEstimateYDeviation": 0.5,
         "poseEstimateThetaDeviation": 0.26179939
-      }
+      },
+      "imageMode": {}
     }
   },
   "globalVariables": {},
